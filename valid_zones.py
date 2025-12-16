@@ -8,9 +8,10 @@ from matplotlib.colors import LightSource
 
 import plotly.graph_objects as px
 
-input_file = "mars2.IMG"
+input_file = "../Modelos/mars2.img"
 output_file = "map.npy"
 output_tiles_file = "tiles.npy"
+
 
 data_file = open(input_file, "rb")
 
@@ -66,7 +67,6 @@ new_scale = scale*sub_rate
 print('New scale:', new_scale, 'meters/pixel')
 
 np.save(output_file, image_data)
-
 
 x = new_scale*np.arange(image_data.shape[1])
 y = new_scale*np.arange(image_data.shape[0])
